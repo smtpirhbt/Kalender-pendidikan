@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keterangan Kalender</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #EFF5FE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .legend-container {
+      display: grid;
+      grid-template-columns: repeat(2, 3fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 10px;
+      padding: 20px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 95vwpx;
+      transition: transform 0.3s ease;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+    .legend-item:hover {
+      background: #fff;
+      transform: translateY(-3px);
+
+    }
+    .legend-color {
+      width: 25px;
+      height: 25px;
+      border-radius: 6px;
+    }
+    .yellow { background: #fdd835; }
+    .blue { background: #90caf9; }
+    .green { background: #4caf50; }
+    .darkblue { background: #1565c0; }
+    .red { background: #e53935; }
+    .purple { background: #8e24aa; }
+    .legend-text {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="legend-container">
+    <div class="legend-item">
+      <div class="legend-color yellow"></div>
+      <div class="legend-text">Buka Tahun Ajaran Baru</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color blue"></div>
+      <div class="legend-text">Minggu Efektif</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color green"></div>
+      <div class="legend-text">Pengambilan Raport</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color darkblue"></div>
+      <div class="legend-text">Tes Akhir Semester</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color red"></div>
+      <div class="legend-text">Libur</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color purple"></div>
+      <div class="legend-text">Jumat Agung & Paskah</div>
+    </div>
+  </div>
+</body>
+</html>
