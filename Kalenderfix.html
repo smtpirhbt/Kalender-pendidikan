@@ -25,7 +25,7 @@
       padding: 10px;
       border-radius: 12px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 85%;
+      width: 90%;
       max-width: 95vw;
       transition: transform 0.3s, opacity 0.3s;
       box-sizing: border-box;
@@ -79,39 +79,10 @@
     .days div.green { background: #4caf50; color:#fff; }
     .days div.red { background: #e53935; color:#fff; }
     .days div.purple { background: #8e24aa; color:#fff; }
-    /* Tombol Navigasi Tahun */
-    .year-controls {
-      position: fixed;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 50px;
-      z-index: 10;
-    }
-    .year-controls button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      background: #2196f3;
-      color: white;
-      font-size: clamp(1rem, 3vw, 1rem);
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-    .year-controls button:hover {
-      transform: scale(1.05);
-      background: #1976d2;
-    }
   </style>
 </head>
 <body>
   <div class="calendar" id="calendar"></div>
-  <div class="year-controls">
-    <button onclick="changeYear(-1)">◀</button>
-    <button onclick="changeYear(1)">▶</button>
-  </div>
 
   <script>
     const calendarContainer = document.getElementById("calendar");
@@ -155,7 +126,7 @@
       calendarContainer.innerHTML = "";
       const easter = getEasterDate(year);
       const goodFriday = new Date(easter); 
-      goodFriday.setDate(easter.getDate() - 2); // Jumat Agung
+      goodFriday.setDate(easter.getDate() - 2);
       const holySaturday = new Date(easter);
       holySaturday.setDate(easter.getDate() - 1);
       const easterSunday = easter;
@@ -230,11 +201,6 @@
         if (idx === currentMonth) m.classList.add("active");
         else m.classList.add("inactive");
       });
-    }
-
-    function changeYear(delta) {
-      currentYear += delta;
-      createCalendar(currentYear);
     }
 
     createCalendar(currentYear);
